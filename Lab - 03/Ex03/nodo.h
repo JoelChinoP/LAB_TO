@@ -7,14 +7,13 @@ class Nodo
 {
 public:
     int valor;
-    std::shared_ptr<Nodo> siguiente;            // Puntero hacia el siguiente nodo
-    std::weak_ptr<Nodo> anterior;               // Puntero hacia el nodo anterior
+    std::shared_ptr<Nodo> siguiente;        
+    std::weak_ptr<Nodo> anterior;               
 
     Nodo(int val) : valor(val), siguiente(nullptr), anterior() {}
     
     ~Nodo() {
-        // Opcional: Mensaje al eliminar un nodo
-        // std::cout << "\nNodo eliminado " << valor;
+        //  Mensaje al eliminar un nodo
     }
 };
 

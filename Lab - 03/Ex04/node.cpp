@@ -8,7 +8,8 @@ int OperandNode::evaluate() {
 }
 
 // Implementación de OperatorNode
-OperatorNode::OperatorNode(char oper, std::unique_ptr<Node> leftNode, std::unique_ptr<Node> rightNode)
+OperatorNode::OperatorNode(char oper, std::unique_ptr<Node> leftNode, 
+            std::unique_ptr<Node> rightNode)
     : op(oper), left(std::move(leftNode)), right(std::move(rightNode)) {}
 
 int OperatorNode::evaluate() {

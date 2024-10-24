@@ -6,9 +6,9 @@
 
 class BinaryExpressionTree {
 private:
-    std::unique_ptr<Node> root;  // Nodo raíz del árbol de expresión
+    std::unique_ptr<Node> root;  // Nodo raíz del árbol 
 public:
-    BinaryExpressionTree(std::unique_ptr<Node> rootNode);  // Constructor
+    BinaryExpressionTree(std::unique_ptr<Node> rootNode); 
     int evaluate();  // Evaluar el árbol completo
 };
 

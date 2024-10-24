@@ -5,7 +5,7 @@
 using namespace std;
 
 Time::Time(const int h, const int m, const int s)
-    : hour(make_unique<int>(h)),   // Inicialización con memoria dinámica
+    : hour(make_unique<int>(h)),   
       minute(make_unique<int>(m)),
       second(make_unique<int>(s))
 {}

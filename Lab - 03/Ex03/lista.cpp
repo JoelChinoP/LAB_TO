@@ -8,7 +8,6 @@ Lista::Lista() : head(nullptr), tail(nullptr)
 
 Lista::~Lista()
 {
-    // Los punteros inteligentes manejarán la destrucción de los nodos automáticamente
     std::cout << "Destructor de Lista\n";
 }
 

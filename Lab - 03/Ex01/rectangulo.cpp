@@ -23,7 +23,7 @@ Rectangulo::Rectangulo(USHORT ancho, USHORT alto)
 }
 
 // Constructor copia
-Rectangulo::Rectangulo(const Rectangulo& R)
+Rectangulo::Rectangulo(const Rectangulo &R)
 {
     std::cout << "constructor copia\n";
     miancho = std::make_unique<USHORT>(*R.miancho);
@@ -45,8 +45,10 @@ void Rectangulo::Dibujar()
 // Sobrecarga de Dibujar
 void Rectangulo::Dibujar(USHORT ancho, USHORT alto)
 {
-    for (USHORT i = 0; i < alto; i++) {
-        for (USHORT j = 0; j < ancho; j++) {
+    for (USHORT i = 0; i < alto; i++)
+    {
+        for (USHORT j = 0; j < ancho; j++)
+        {
             std::cout << "*";
         }
         std::cout << "\n";

@@ -3,11 +3,11 @@
 int main()
 {
     // Instancias dinámicas con punteros inteligentes
-    std::unique_ptr<Rectangulo> x = std::make_unique<Rectangulo>();  // Llama al constructor por defecto
+    std::unique_ptr<Rectangulo> x = std::make_unique<Rectangulo>();  
     std::cout << "Dibujar(): \n";
     x->Dibujar();
 
-    std::unique_ptr<Rectangulo> y = std::make_unique<Rectangulo>(30, 5);  // Llama al constructor normal
+    std::unique_ptr<Rectangulo> y = std::make_unique<Rectangulo>(30, 5);  
     std::cout << "Dibujar(30,5): \n";
     y->Dibujar();
 

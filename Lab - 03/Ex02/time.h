@@ -6,9 +6,9 @@
 class Time
 {
 private:
-    std::unique_ptr<int> hour;   // Puntero inteligente para la hora
-    std::unique_ptr<int> minute; // Puntero inteligente para el minuto
-    std::unique_ptr<int> second; // Puntero inteligente para el segundo
+    std::unique_ptr<int> hour;   
+    std::unique_ptr<int> minute; 
+    std::unique_ptr<int> second; 
 
 public:
     // Constructor con valores por defecto
@@ -17,7 +17,6 @@ public:
     // Setter
     void setTime(const int h, const int m, const int s);
 
-    // Imprime la descripción del objeto en formato " hh:mm:ss"
     void print() const;
 
     // Compara 2 objetos Time

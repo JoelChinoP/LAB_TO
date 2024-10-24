@@ -5,7 +5,7 @@
 
 class Node {
 public:
-    virtual int evaluate() = 0;  // Método virtual puro para evaluar el nodo
+    virtual int evaluate() = 0;  
     virtual ~Node() = default;   // Destructor virtual
 };
 
@@ -20,9 +20,10 @@ public:
 class OperatorNode : public Node {
 private:
     char op;  // Operador ('+' o '*')
-    std::unique_ptr<Node> left, right;  // Punteros a los nodos izquierdo y derecho
+    std::unique_ptr<Node> left, right;  
 public:
-    OperatorNode(char oper, std::unique_ptr<Node> leftNode, std::unique_ptr<Node> rightNode);
+    OperatorNode(char oper, std::unique_ptr<Node> leftNode, 
+        std::unique_ptr<Node> rightNode);
     int evaluate() override;  // Evaluar el resultado de la operación
 };
 
