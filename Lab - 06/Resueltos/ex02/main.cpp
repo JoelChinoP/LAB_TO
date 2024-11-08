@@ -11,7 +11,8 @@ void ExecuteThread(int id) {
     // Calculate the local timezone
     tm myLocalTime = *localtime(&sleepTime);
 
-    std::cout << "Thread: " << id << " sleep time: " << std::ctime(&sleepTime) << "\n";
+    std::cout << "Thread: " << id << " sleep time: " 
+                << std::ctime(&sleepTime) << "\n";
     std::cout << "Month: " << (myLocalTime.tm_mon + 1) << "\n";
     std::cout << "Day: " << myLocalTime.tm_mday << "\n";
     std::cout << "Year: " << (myLocalTime.tm_year + 1900) << "\n";
@@ -25,7 +26,8 @@ void ExecuteThread(int id) {
     nowTime = std::chrono::system_clock::now();
     sleepTime = std::chrono::system_clock::to_time_t(nowTime);
     
-    std::cout << "Thread: " << id << " Awake Time: " << std::ctime(&sleepTime) << "\n";
+    std::cout << "Thread: " << id << " Awake Time: " 
+            << std::ctime(&sleepTime) << "\n";
 }
 
 int main() {
