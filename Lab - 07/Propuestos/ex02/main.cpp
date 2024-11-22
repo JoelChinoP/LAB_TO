@@ -1,8 +1,10 @@
 #include "Director.h"
 #include "Cliente.h"
 #include <iostream>
+using namespace std;
 
-int main() {
+int main()
+{
     Director director;
     CuentaBuilder builder;
     director.setBuilder(&builder);
@@ -19,6 +21,8 @@ int main() {
 
     cliente.mostrarCuentas();
 
+    cout << endl
+         << "***Intereses después de 1 año:" << endl;
     cliente.calcularIntereses(1); // Intereses después de 1 año
     cliente.mostrarCuentas();
 

@@ -2,19 +2,22 @@
 #include "AutomovilBuilder.h"
 #include <iostream>
 
-int main() {
+int main()
+{
+    std::cout << "\n=== Sistema de Construcción de Automóviles ===\n"
+              << std::endl;
+
     Director director;
     AutomovilBuilder builder;
-
     director.setBuilder(&builder);
 
-    std::cout << "Automóvil Económico:" << std::endl;
-    Automovil* economico = director.construirAutomovilEconomico();
+    std::cout << "Construyendo automóvil económico..." << std::endl;
+    Automovil *economico = director.construirAutomovilEconomico();
     economico->mostrar();
     delete economico;
 
-    std::cout << "\nAutomóvil Deportivo:" << std::endl;
-    Automovil* deportivo = director.construirAutomovilDeportivo();
+    std::cout << "\nConstruyendo automóvil deportivo..." << std::endl;
+    Automovil *deportivo = director.construirAutomovilDeportivo();
     deportivo->mostrar();
     delete deportivo;
 

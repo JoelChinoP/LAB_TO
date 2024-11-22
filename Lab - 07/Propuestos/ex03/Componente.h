@@ -1,21 +1,19 @@
 #ifndef COMPONENTE_H
 #define COMPONENTE_H
-
 #include <string>
 #include <iostream>
 
 class Componente {
 private:
     std::string tipo;
-    std::string color;
+    std::string especificacion;
 
 public:
-    Componente(const std::string& tipo, const std::string& color)
-        : tipo(tipo), color(color) {}
+    Componente(const std::string& tipo, const std::string& especificacion)
+        : tipo(tipo), especificacion(especificacion) {}
 
     void mostrar() const {
-        std::cout << tipo << " de color " << color << std::endl;
+        std::cout << tipo << ": " << especificacion << std::endl;
     }
 };
-
 #endif
