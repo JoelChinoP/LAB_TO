@@ -1,9 +1,15 @@
 #include <iostream>
 #include <string>
+#include <memory> // Para std::unique_ptr
+
+// Declaraciones anticipadas de clases abstractas
+class AbstractProductoA;
+class AbstractProductoB;
 
 class AbstractFactory
 {
 public:
+    virtual ~AbstractFactory() = default;
     virtual AbstractProductoA *CrearProductoA() const = 0;
     virtual AbstractProductoB *CrearProductoB() const = 0;
 };
@@ -11,7 +17,7 @@ public:
 class AbstractProductoA
 {
 public:
-    virtual ~AbstractProductoA() {};
+    virtual ~AbstractProductoA() = default;
     virtual std::string Funcion1_A() const = 0;
 };
 
@@ -36,7 +42,7 @@ public:
 class AbstractProductoB
 {
 public:
-    virtual ~AbstractProductoB() {};
+    virtual ~AbstractProductoB() = default;
     virtual std::string Funcion1_B() const = 0;
     virtual std::string Funcion2_B(const AbstractProductoA &colaborador) const = 0;
 };
@@ -101,29 +107,29 @@ public:
 
 void Cliente(const AbstractFactory &f)
 {
-    const AbstractProductoA *producto_a = f.CrearProductoA();
-    const AbstractProductoB *producto_b = f.CrearProductoB();
+    // Uso de punteros únicos para manejar memoria automáticamente
+    std::unique_ptr<AbstractProductoA> producto_a(f.CrearProductoA());
+    std::unique_ptr<AbstractProductoB> producto_b(f.CrearProductoB());
 
     std::cout << producto_b->Funcion1_B() << "\n";
     std::cout << producto_b->Funcion2_B(*producto_a) << std::endl;
-
-    delete producto_a;
-    delete producto_b;
 }
 
 int main()
 {
     std::cout << "Cliente: Tipo 1\n";
-    CFactory1 *f1 = new CFactory1();
-    Cliente(*f1);
-    delete f1;
+    {
+        CFactory1 f1;
+        Cliente(f1);
+    }
 
     std::cout << std::endl;
 
     std::cout << "Cliente: Tipo 2\n";
-    CFactory2 *f2 = new CFactory2();
-    Cliente(*f2);
-    delete f2;
+    {
+        CFactory2 f2;
+        Cliente(f2);
+    }
 
     return 0;
 }

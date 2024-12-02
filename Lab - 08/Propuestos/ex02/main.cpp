@@ -30,7 +30,7 @@ class WinButton : public Button
 public:
     void Draw()
     {
-        std::cout << "Drawing Windows Button" << std::endl;
+        std::cout << "Dbujando boton en Windows" << std::endl;
     }
 };
 
@@ -40,7 +40,7 @@ class WinCheckBox : public CheckBox
 public:
     void Draw()
     {
-        std::cout << "Drawing Windows CheckBox" << std::endl;
+        std::cout << "Dibujando CheckBox en Windows" << std::endl;
     }
 };
 
@@ -50,7 +50,7 @@ class MacButton : public Button
 public:
     void Draw()
     {
-        std::cout << "Drawing Mac Button" << std::endl;
+        std::cout << "Dbujando boton en Mac" << std::endl;
     }
 };
 
@@ -60,7 +60,27 @@ class MacCheckBox : public CheckBox
 public:
     void Draw()
     {
-        std::cout << "Drawing Mac CheckBox" << std::endl;
+        std::cout << "Dibujando CheckBox en Mac" << std::endl;
+    }
+};
+
+// Implementación de Button para Linux
+class LinuxButton : public Button
+{
+public:
+    void Draw()
+    {
+        std::cout << "Dibujando botón en Linux" << std::endl;
+    }
+};
+
+// Implementación de CheckBox para Linux
+class LinuxCheckBox : public CheckBox
+{
+public:
+    void Draw()
+    {
+        std::cout << "Dibujando CheckBox en Linux " << std::endl;
     }
 };
 
@@ -76,26 +96,6 @@ public:
     CheckBox *CreateCheckBox()
     {
         return new LinuxCheckBox();
-    }
-};
-
-// Implementación de Button para Linux
-class LinuxButton : public Button
-{
-public:
-    void Draw()
-    {
-        std::cout << "Drawing Linux Button" << std::endl;
-    }
-};
-
-// Implementación de CheckBox para Linux
-class LinuxCheckBox : public CheckBox
-{
-public:
-    void Draw()
-    {
-        std::cout << "Drawing Linux CheckBox" << std::endl;
     }
 };
 
